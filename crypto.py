@@ -20,6 +20,11 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 _fernet: Fernet | None = None
 _master_pwd: str = ""
 
+# Console Windows (cp1252) : tolérer les symboles Unicode (⚠, ✅, …)
+for _stream in (sys.stdout, sys.stderr):
+    if _stream is not None and hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(errors="replace")
+
 
 # ==================================================================
 #                        CLÉ & SEL
