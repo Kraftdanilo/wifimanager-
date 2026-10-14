@@ -24,11 +24,15 @@ htmlcov/
 *.egg-info/
 
 # --- Fichiers protégés / données locales (jamais publiés)
-*.db          # base SQLite (mots de passe Wi-Fi)
-*.log         # logs (peuvent contenir des SSID)
-*.bin         # sel de chiffrement (wifi_salt.bin)
+# *.db  : base SQLite (mots de passe Wi-Fi)
+# *.log : logs (peuvent contenir des SSID)
+# *.bin : sel de chiffrement (wifi_salt.bin)
+# .env  : mot de passe maître
+*.db
+*.log
+*.bin
 data/
-.env          # mot de passe maître
+.env
 *.key
 *.pem
 secrets.*
