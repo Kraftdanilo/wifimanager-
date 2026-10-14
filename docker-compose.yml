@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  wifi-manager:
+    build: .
+    image: wifi-manager:latest
+    container_name: wifi-manager
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      # ⚠ Changez cette valeur !
+      WIFI_MASTER_PASSWORD: "change-me-please"
+      WIFI_LOG_LEVEL: "INFO"
+      WIFI_RATE_LIMIT: "60"
+      # WIFI_READONLY: "1"   # décommenter pour désactiver connect/disconnect
+    network_mode: bridge

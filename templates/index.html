@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>WIFI / MANAGER</title>
+<link rel="icon" type="image/png" href="/static/icon.png">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- ============================================================
+                         HEADER
+     ============================================================ -->
+<header>
+  <h1>WIFI<span>/</span>MANAGER</h1>
+
+  <div class="header-right">
+    <!-- Bouton thème (☀ / 🌙) -->
+    <button id="theme-toggle" class="theme-btn"
+            type="button" title="Thème">☀</button>
+
+    <!-- Sélecteur de langue -->
+    <select id="lang-switch" class="lang-switch" aria-label="Language">
+      <option value="fr">🇫🇷 FR</option>
+      <option value="en">🇬🇧 EN</option>
+    </select>
+
+    <!-- Navigation principale -->
+    <nav>
+      <button data-tab="scan"    class="active" data-i18n="nav.scan">SCAN</button>
+      <button data-tab="saved"                  data-i18n="nav.saved">ENREGISTRÉS</button>
+      <button data-tab="history"                data-i18n="nav.history">HISTORIQUE</button>
+      <button data-tab="stats"                  data-i18n="nav.stats">STATS</button>
+      <button data-tab="share"                  data-i18n="nav.share">PARTAGER</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================================================
+                            TAB SCAN
+       ============================================================ -->
+  <section id="tab-scan" class="tab active">
+    <div class="toolbar">
+      <input id="search" type="text"
+             placeholder="FILTRER SSID"
+             data-i18n-attr="placeholder:scan.filter">
+      <button id="btn-scan" class="btn" type="button"
+              data-i18n="btn.refresh">ACTUALISER</button>
+    </div>
+    <div id="scan-list" class="list">
+      <div class="empty" data-i18n="common.loading">CHARGEMENT…</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+                            TAB SAVED
+       ============================================================ -->
+  <section id="tab-saved" class="tab">
+    <div class="toolbar">
+      <input id="search-saved" type="text"
+             placeholder="FILTRER SSID"
+             data-i18n-attr="placeholder:scan.filter">
+      <button id="btn-saved" class="btn" type="button"
+              data-i18n="btn.reload">RECHARGER</button>
+    </div>
+    <div id="saved-list" class="list">
+      <div class="empty" data-i18n="common.loading">CHARGEMENT…</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+                            TAB HISTORY
+       ============================================================ -->
+  <section id="tab-history" class="tab">
+    <div class="toolbar">
+      <select id="history-filter" class="history-filter">
+        <option value="all"         data-i18n="history.filter.all">TOUT</option>
+        <option value="changes"     data-i18n="history.filter.changes">CHANGEMENTS MDP</option>
+        <option value="connections" data-i18n="history.filter.connections">CONNEXIONS</option>
+      </select>
+      <button id="btn-history" class="btn" type="button"
+              data-i18n="btn.reload">RECHARGER</button>
+      <button id="btn-history-clear" class="btn btn-danger" type="button"
+              data-i18n="btn.clear">EFFACER</button>
+    </div>
+    <div id="history-list" class="list">
+      <div class="empty" data-i18n="common.loading">CHARGEMENT…</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+                            TAB STATS
+       ============================================================ -->
+  <section id="tab-stats" class="tab">
+    <div class="toolbar">
+      <span class="toolbar-title" data-i18n="stats.title">TABLEAU DE BORD</span>
+      <button id="btn-export-pdf" class="btn" type="button"
+              title="Exporter en PDF">
+        📤 <span data-i18n="btn.export_pdf">PDF</span>
+      </button>
+      <button id="btn-stats" class="btn" type="button"
+              data-i18n="btn.refresh">RAFRAÎCHIR</button>
+    </div>
+    <div id="stats-content" class="stats-wrapper">
+      <div class="empty" data-i18n="common.loading">CHARGEMENT…</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+                            TAB SHARE
+       ============================================================ -->
+  <section id="tab-share" class="tab">
+    <div id="share-content">
+      <div class="empty" data-i18n="common.loading">CHARGEMENT…</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Toast notifications -->
+<div id="toast"></div>
+
+<!-- Script principal -->
+<script src="/static/app.js"></script>
+
+</body>
+</html>

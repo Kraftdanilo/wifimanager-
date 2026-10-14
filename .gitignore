@@ -1,0 +1,26 @@
+# Venv
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Données locales
+*.db
+*.log
+*.bin
+data/
+.env
+
+# Divers
+.vscode/
+.idea/
+dist/
+build/
+*.spec
