@@ -1,8 +1,6 @@
-<div align="center">
-  <img src="docs/logo.svg" width="120" alt="Logo">
-  <h1>📡 Wifi Manager</h1>
-  <p>Application web locale pour gérer vos réseaux Wi-Fi</p>
-</div>
+# 📡 Wifi Manager
+
+![Logo](docs/logo.svg)
 
 Application web locale pour gérer, analyser et partager vos réseaux Wi-Fi.
 
@@ -49,6 +47,7 @@ python -m venv .venv
 
 pip install -r requirements.txt
 python app.py
+```
 
 ## 🔄 Mise à jour automatique
 
