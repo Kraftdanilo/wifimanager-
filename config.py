@@ -20,7 +20,7 @@ def _bool(key: str, default: bool = False) -> bool:
 class Config:
     # --- Identité
     APP_NAME = "Wifi Manager"
-    APP_VERSION = "1.2.0"
+    APP_VERSION = "1.2.1"
     APP_AUTHOR = "Dane"
     APP_COPYRIGHT = "© 2026 Dane — manifest @2026"
     REPO_URL = "https://github.com/Kraftdanilo/wifimanager-"

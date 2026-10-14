@@ -1,13 +1,17 @@
-# 📡 Wifi Manager
+<div align="center">
+  <img src="docs/logo.svg" width="120" alt="Logo">
+  <h1>📡 Wifi Manager</h1>
+  <p>Application web locale pour gérer vos réseaux Wi-Fi</p>
+</div>
 
 Application web locale pour gérer, analyser et partager vos réseaux Wi-Fi.
 
-**Version 1.2.0** — © 2026 **Dane** — manifest @2026
+**Version 1.2.1** — © 2026 **Dane** — manifest @2026
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![Flask](https://img.shields.io/badge/flask-3.0+-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Version](https://img.shields.io/badge/version-1.2.0-orange.svg)
+![Version](https://img.shields.io/badge/version-1.2.1-orange.svg)
 [![Tests](https://github.com/Kraftdanilo/wifimanager-/actions/workflows/test.yml/badge.svg)](https://github.com/Kraftdanilo/wifimanager-/actions/workflows/test.yml)
 
 ## ✨ Fonctionnalités
@@ -63,7 +67,7 @@ python update.py --apply   # appliquer la mise à jour
 Comment ça marche :
 
 1. Lit la version distante dans `manifest.json` sur GitHub (fallback : dernier commit)
-2. Compare avec la version locale (`1.2.0`)
+2. Compare avec la version locale (`1.2.1`)
 3. Fait `git pull` si le dépôt est un clone, sinon télécharge l'archive ZIP
    et remplace uniquement les fichiers applicatifs
 4. **Préserve** : `.venv`, `.git`, `data/`, `wifi_data.db`, `wifi_salt.bin`,

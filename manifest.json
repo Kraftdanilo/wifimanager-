@@ -1,10 +1,10 @@
 {
   "name": "wifi-manager",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Dane",
   "copyright": "© 2026 Dane — manifest @2026",
   "repo": "https://github.com/Kraftdanilo/wifimanager-",
-  "notes": "Version 1.2.0 : chiffrement AES, tests, logs rotatifs, rate limiting, Docker, mise à jour automatique.",
+  "notes": "Version 1.2.1 : chiffrement AES, mot de passe maître, rate limiting, tests pytest, CI, Docker, mise à jour automatique.",
   "files": [
     "app.py",
     "config.py",
