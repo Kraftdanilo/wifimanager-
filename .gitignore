@@ -1,26 +1,43 @@
-# Venv
+# ==================================================
+#  Wifi Manager v1.2.0 — © 2026 Dane (manifest @2026)
+#  Ne pousse PAS : module de mise à jour + fichiers protégés
+# ==================================================
+
+# --- Module de mise à jour (privé, non publié)
+update.py
+update.pyc
+_update/
+
+# --- Environnement virtuel
 .venv/
 venv/
 
-# Python
+# --- Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 .pytest_cache/
 .coverage
 coverage.xml
 htmlcov/
+*.egg-info/
 
-# Données locales
-*.db
-*.log
-*.bin
+# --- Fichiers protégés / données locales (jamais publiés)
+*.db          # base SQLite (mots de passe Wi-Fi)
+*.log         # logs (peuvent contenir des SSID)
+*.bin         # sel de chiffrement (wifi_salt.bin)
 data/
-.env
+.env          # mot de passe maître
+*.key
+*.pem
+secrets.*
 
-# Divers
+# --- Divers
 .vscode/
 .idea/
 dist/
 build/
 *.spec
+.DS_Store
+Thumbs.db

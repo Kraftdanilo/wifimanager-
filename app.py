@@ -866,7 +866,14 @@ def api_disconnect():
 @app.route("/api/update/check")
 def api_update_check():
     """Vérifie si une mise à jour est disponible sur GitHub."""
-    import update
+    try:
+        import update
+    except ImportError:
+        return jsonify({
+            "ok": False,
+            "error": "module de mise à jour non installé (update.py absent)",
+            "update_available": False,
+        }), 503
     return jsonify(update.check_latest())
 
 
@@ -875,7 +882,13 @@ def api_update_apply():
     """Applique la mise à jour (désactivé en mode lecture seule)."""
     if Config.READONLY:
         return jsonify({"ok": False, "message": "Lecture seule."}), 403
-    import update
+    try:
+        import update
+    except ImportError:
+        return jsonify({
+            "ok": False,
+            "error": "module de mise à jour non installé (update.py absent)",
+        }), 503
     return jsonify(update.apply_update())
 
 
